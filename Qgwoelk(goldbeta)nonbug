@@ -1,0 +1,65 @@
+float xhero= 300;
+float yhero= 300;
+float gx = random(500);
+float gy = random(500);
+int i= 0;
+float dist=sqrt (((gx - xhero)*(gx-xhero)) + ((gy - yhero)*(gy - yhero)));
+void setup() {
+size(1000, 1000);
+
+
+
+
+frameRate(60);
+
+}
+
+
+void draw() {
+  
+  background(0, 250, 0);
+noFill();
+fill(0, 0, 200);
+rect(0, 0, 2000, 1000);
+fill(300, 250, 100);
+ellipse(60, 60, 100, 100);
+fill(250,0,0);
+rect(500,400,500,200);
+fill(50,50,50);
+triangle(250,300,500,50,750,300);
+fill(75,50,50);
+rect(500,450,75,100);
+//rectboi
+  xhero= xhero + (gx-xhero)/10;
+ yhero= yhero + (gy-yhero)/10;
+ellipseMode(CENTER); 
+rectMode(CENTER); 
+stroke(0);
+fill(0,100, 100);
+rect(xhero,yhero, 20, 40);
+fill(255);
+ellipse(xhero, yhero-20, 30,30);
+
+fill(0);
+ellipse(xhero-5, yhero-15, 5,5);
+ellipse(xhero+5, yhero-15, 5,5);
+//gold
+fill(300,200,100);
+ ellipse( gx, gy, 20, 30); 
+  if(dist < 75) {
+    i=i+100;
+   print(i+"points!");  
+   gx= random(500);
+  gy= random(500);
+ xhero= random(500,1000);
+yhero= random(1000);}
+else{
+i=i-10;
+print("you have "+i+" points");
+ }
+  }
+
+ 
+ 
+ 
+
